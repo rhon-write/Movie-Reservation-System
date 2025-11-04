@@ -37,7 +37,11 @@ Route::middleware(['customer'])->prefix('booking')->group(function () {
     Route::get('/confirmation/{bookingId}', [BookingController::class, 'confirmation'])->name('booking.confirmation');
 });
 
-
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
