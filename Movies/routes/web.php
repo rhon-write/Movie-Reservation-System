@@ -7,12 +7,6 @@ use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Public Routes
-|--------------------------------------------------------------------------
-*/
-
 Route::get('/', function () {
     $movies = \App\Models\Movie::where('status', 'active')
         ->orderBy('created_at', 'desc')
