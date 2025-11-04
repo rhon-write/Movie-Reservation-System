@@ -17,11 +17,7 @@ Route::get('/', function () {
 Route::get('/movies', [MovieController::class, 'index'])->name('movies.index');
 Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
 
-/*
-|--------------------------------------------------------------------------
-| Customer Authentication Routes
-|--------------------------------------------------------------------------
-*/
+
 
 Route::prefix('customer')->group(function () {
     Route::get('/login', [CustomerAuthController::class, 'showLogin'])->name('customer.login');
