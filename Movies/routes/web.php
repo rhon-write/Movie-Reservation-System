@@ -31,12 +31,6 @@ Route::prefix('customer')->group(function () {
     Route::post('/logout', [CustomerAuthController::class, 'logout'])->name('customer.logout');
 });
 
-/*
-|--------------------------------------------------------------------------
-| Booking Routes (Customer Authentication Required)
-|--------------------------------------------------------------------------
-*/
-
 Route::middleware(['customer'])->prefix('booking')->group(function () {
     Route::get('/seats/{movie}/{showtime}', [BookingController::class, 'selectSeats'])->name('booking.selectSeats');
     Route::post('/store', [BookingController::class, 'store'])->name('booking.store');
